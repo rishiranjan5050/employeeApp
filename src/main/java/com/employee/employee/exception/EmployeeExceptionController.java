@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class EmployeeExceptionController {
     @ExceptionHandler(EmployeeNotFoundException.class)
     public ResponseEntity<Object> exception(EmployeeNotFoundException exp){
-        return new ResponseEntity<>("EMployee not found ", HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("Employee not found ", HttpStatus.NOT_FOUND);
     }
 }

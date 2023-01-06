@@ -47,7 +47,11 @@ public class AppController {
     @GetMapping("/employee/{id}")
     Employee getEmployee(@PathVariable Long id){
         logger.info("Get employee with Id : %d",+id);
-        return empService.getEmployee(id);
+        try {
+            return empService.getEmployee(id);
+        }catch(Exception ex){
+            throw new EmployeeNotFoundException();
+        }
     }
 
     @DeleteMapping("/employee/{id}")
@@ -83,11 +87,11 @@ public class AppController {
     @GetMapping("/department/{id}")
     Department getDepartment(@PathVariable Long id){
         logger.info("Get Department with Id : %d",+id);
-        Department dpt = deptService.getDepartmentById(id);
-        if(dpt.equals(null) || dpt==null){
+        try {
+            return deptService.getDepartmentById(id);
+        }catch(Exception ex){
             throw new DeprtmentNotFoundException();
         }
-        return dpt;
     }
 
     @DeleteMapping("/department/{id}")
