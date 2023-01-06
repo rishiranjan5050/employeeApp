@@ -10,6 +10,6 @@ public class DepartmentExceptionController {
 
     @ExceptionHandler(DeprtmentNotFoundException.class)
     public ResponseEntity<Object> exception(DeprtmentNotFoundException exp){
-        return new ResponseEntity("Product not found", HttpStatus.NOT_FOUND);
+        return new ResponseEntity("Department not found", HttpStatus.NOT_FOUND);
     }
 }

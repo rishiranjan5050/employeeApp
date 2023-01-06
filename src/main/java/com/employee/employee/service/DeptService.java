@@ -10,9 +10,6 @@ public interface DeptService {
     // Save operation
     Department saveDepartment(Department department);
 
-    // Read operation
-    List<Department> fetchDepartmentList();
-
     // Update operation
     Department updateDepartment(Department department,
                                 Long departmentId);

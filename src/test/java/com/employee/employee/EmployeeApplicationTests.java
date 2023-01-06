@@ -15,9 +15,9 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-@SpringBootTest(classes ={EmployeeApplication.class,H2TestProfileJPAConfig.class})
+@SpringBootTest(classes ={EmployeeApplication.class})
 
-@ActiveProfiles("test")
+//@ActiveProfiles("test")
 @WebAppConfiguration
 class EmployeeApplicationTests {
 	protected MockMvc mvc;

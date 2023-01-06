@@ -16,22 +16,17 @@ public class DeptServiceImpl implements DeptService{
 
     @Override
     public Department saveDepartment(Department department) {
-        return null;
-    }
-
-    @Override
-    public List<Department> fetchDepartmentList() {
-        return null;
+        return repository.save(department);
     }
 
     @Override
     public Department updateDepartment(Department department, Long departmentId) {
-        return null;
+        return repository.save(department);
     }
 
     @Override
     public void deleteDepartmentById(Long departmentId) {
-
+        repository.deleteById(departmentId);
     }
 
     @Override

@@ -61,7 +61,7 @@ public class AppController {
         }
     }
 
-    @PostMapping("/department/{id}")
+    @PostMapping("/departments")
     ResponseEntity<Object> addDepartment(@RequestBody Department dpt){
         try {
             deptService.saveDepartment(dpt);
@@ -74,7 +74,10 @@ public class AppController {
     @GetMapping("/departments")
     List<Department> allDepartment() {
         logger.info("Fetching all employees.");
-        return deptService.all();
+        List<Department> deptlist = deptService.all();
+        if(deptlist.size()<1){ throw new DeprtmentNotFoundException();};
+
+         return deptlist;
     }
 
     @GetMapping("/department/{id}")
